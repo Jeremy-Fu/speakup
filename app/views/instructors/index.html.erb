@@ -1,0 +1,37 @@
+<h1>Listing instructors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th width = 150px >Name</th>
+      <th width = 150px >Proficiency</th>
+      <th width = 150px >Rates</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instructors.each do |instructor| %>
+      <tr align = 'center'>
+        <td><%= instructor.name %></td>
+        <td><%= instructor.proficiency %></td>
+        <td><%= instructor.rates %></td>
+        <td width = 50px>
+          <%= link_to 'Show', instructor_path(instructor), method: 'get' %>
+        </td>
+        <td width = 50px>
+          <%= link_to 'Edit', edit_instructor_path(instructor) %>
+        </td>
+        <td width = 50px>
+          <%= link_to 'Destroy', instructor_path(instructor), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instructor', new_instructor_path %>

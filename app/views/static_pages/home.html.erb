@@ -1,0 +1,15 @@
+<div class="center hero-unit">
+  <h1>Welcome to the speakUp</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="localhost:3000/">speakUp</a>
+    oral English website.
+  </h2>
+
+  <% if !user_signed_in? %>
+  <%= link_to "Join Us Now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+  <% else %>
+  <%= link_to "Look Aournd!", '/instructors', class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
